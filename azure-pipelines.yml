@@ -27,11 +27,3 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
-
-- script: python src/exam.py
-- task: PythonScript@0
-  inputs:
-    scriptSource: 'inline'
-    script: |
-    print('hello world 1')
-    print('hello world 2')
