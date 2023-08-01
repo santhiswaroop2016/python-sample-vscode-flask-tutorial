@@ -29,3 +29,14 @@ steps:
     inputs:
      testResultsFiles: '**/test-*.xml'
      testRunTitle: 'Publish test results for Python $(python.version)'
+
+  - script: 'python setup.py swaroop'
+    displayName: 'Build swaroop'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: swaroop'
+    inputs:
+      PathtoPublish: 'swaroop'
+      ArtifactName: 'swaroop'
+      publishLocation: 'Container'
+
